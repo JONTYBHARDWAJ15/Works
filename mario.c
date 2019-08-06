@@ -4,7 +4,7 @@
 int main(void)
 {
     // Declaring Variables
-    int height, space , hash;
+    int height, space, hash;
     
     // Condition for Accepting of Value
     do
@@ -12,18 +12,18 @@ int main(void)
        printf("Height:");
        height = get_int(0); 
     }
-     while (height < 1 || height > 8);
+    while (height < 1 || height > 8);
     
     // loop for row
-    for (int i = 0; i < height; i++)
+    for (int i = 1; i <= height; i++)
     {
-       // loop for space
-        for (space = (height - i); space >0; space--)
+        // loop for space
+        for (space = (height - i); space > 0; space--)
         {
             printf(" ");
         }
-         // loop for hash
-        for (hash = 0; hash < (i + 1); hash++)
+        // loop for hash
+        for (hash = 1; hash < (i + 1); hash++)
         {
             printf("#");
         }
