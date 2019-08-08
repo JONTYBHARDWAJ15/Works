@@ -9,8 +9,8 @@ int main(void)
     // Condition for Accepting of Value
     do
     {
-       printf("Height:");
-       height = get_int(0); 
+        printf("Height: ");
+        height = get_int(0); 
     }
     while (height < 1 || height > 8);
     
