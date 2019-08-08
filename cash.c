@@ -8,36 +8,36 @@ int main(void)
     float dollar;
     do 
     {
-       dollar = get_float("Change Owed: ");
+        dollar = get_float("Change Owed: ");
     }
-    while ( dollar < 0);
+    while (dollar < 0);
     
     // declaring cents and its conversion from dollars
-    int cents = round(dollar*100);
+    int cents = round(dollar * 100);
     
     //setting coin counter
     int coins = 0;
     
     // loops for greedy algorithms 
-    while ( cents >= 25 )
+    while (cents >= 25)
     {
         cents -= 25;
         coins++;
     }
     
-    while ( cents >= 10)
+    while (cents >= 10)
     {
         cents -= 10;
         coins++;
     }
     
-    while ( cents >= 5)
+    while (cents >= 5)
     {
         cents -= 5;
         coins++;
     }
     
-    while ( cents >= 1)
+    while (cents >= 1)
     {
         cents -= 1;
         coins++;
