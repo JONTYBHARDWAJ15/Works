@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char* argv[])
+int main(int argc, char**argv)
 {
-    if(argc == 2)
+    if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
         return 1;
@@ -20,23 +20,23 @@ int main(int argc, char* argv[])
     }
     
     string plaintext = get_string("plaintext: ");
-    printf ("ciphertext: ");
+    printf("ciphertext: ");
     
     for (int i = 0, l = strlen(plaintext); i < l; i++)
     {
         // c = (plaintext[i] -'a' + k) % 26 + 'a'
         if islower(plaintext[i])
         {
-             printf("%c", (plaintext[i] -'a' + k) % 26 + 'a');
+            printf("%c", (plaintext[i] -'a' + k) % 26 + 'a');
         }
         // c = (plaintext[i] -'A' + k) % 26 + 'A'
         else if isupper(plaintext[i])
         {
-             printf("%c", (plaintext[i] -'A' + k) % 26 + 'A');
+            printf("%c", (plaintext[i] -'A' + k) % 26 + 'A');
         }
         
         else 
-            printf("%c", plaintext[i]);
-    }
-    printf ("\n");
+        printf("%c", plaintext[i]);
+     }
+     printf ("\n");
 }
