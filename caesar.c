@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char**argv)
+int main(int argc, char **argv)
 {
     if (argc != 2)
     {
@@ -27,16 +27,19 @@ int main(int argc, char**argv)
         // c = (plaintext[i] -'a' + k) % 26 + 'a'
         if islower(plaintext[i])
         {
-            printf("%c", (plaintext[i] -'a' + k) % 26 + 'a');
+            printf("%c", (plaintext[i] - 'a' + k) % 26 + 'a');
         }
         // c = (plaintext[i] -'A' + k) % 26 + 'A'
         else if isupper(plaintext[i])
         {
-            printf("%c", (plaintext[i] -'A' + k) % 26 + 'A');
+            printf("%c", (plaintext[i] - 'A' + k) % 26 + 'A');
         }
         
         else 
-        printf("%c", plaintext[i]);
-     }
+        {
+            printf("%c", plaintext[i]);
+        }    
+        
+    }
      printf ("\n");
 }
