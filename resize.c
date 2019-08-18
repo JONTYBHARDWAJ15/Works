@@ -3,7 +3,7 @@
 
 #include "bmp.h"
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     // Ensure proper usage
     if (argc != 4)
@@ -13,8 +13,8 @@ int main(int argc, char* argv[])
     }
 
     // remember filenames
-    char* infile = argv[2];
-    char* outfile = argv[3];
+    char *infile = argv[2];
+    char *outfile = argv[3];
 
     int factor = atoi(argv[1]);
 
@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     }
 
     // open input file
-    FILE* inptr = fopen(infile, "r");
+    FILE *inptr = fopen(infile, "r");
     if (inptr == NULL)
     {
         printf("Could not open %s.\n", infile);
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     }
 
     // open output file
-    FILE* outptr = fopen(outfile, "w");
+    FILE *outptr = fopen(outfile, "w");
     if (outptr == NULL)
     {
         fclose(inptr);
@@ -66,8 +66,8 @@ int main(int argc, char* argv[])
     bi_r.biHeight = bi.biHeight * factor;
 
     // Determine the old and new paddings
-    int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) %4) % 4;
-    int res_padding = (4 - (bi_r.biWidth * sizeof(RGBTRIPLE)) %4) % 4;
+    int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+    int res_padding = (4 - (bi_r.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
 
     // Determine new image sizes
     bi_r.biSizeImage = (bi_r.biWidth * sizeof(RGBTRIPLE) + res_padding) * abs(bi_r.biHeight);
@@ -96,16 +96,22 @@ int main(int argc, char* argv[])
 
                 // write RGB triple to outfile, multiplied by factor
                 for (int l = 0; l < factor; l++)
+                {
                     fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
+                }
             }
 
             // Add a new padding
             for (int l = 0; l < res_padding; l++)
+            {
                 fputc(0x00, outptr);
+            }
 
             // Return to the beginning of a scanline
             if (j < factor - 1)
+            {
                 fseek(inptr, -bi.biWidth * sizeof(RGBTRIPLE), SEEK_CUR);
+            }
         }
 
         // Skip over padding, if any
