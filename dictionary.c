@@ -94,10 +94,8 @@ bool load(const char *dictionary)
         }
         dic_size ++;
     }
-    bool unload(void)
     fclose(dic);
     return true;
-
 }
 
 /**
