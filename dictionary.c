@@ -125,7 +125,7 @@ bool unload(void)
     {
         if (hashtable[i] != NULL)
         {
-            destroy(hashtable[i]);
+            free(hashtable[i]);
         }
     }
     return true;
