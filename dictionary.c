@@ -96,6 +96,7 @@ bool load(const char *dictionary)
     }
     fclose(dic);
     return true;
+    bool unload(void)
 }
 
 /**
