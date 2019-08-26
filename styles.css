@@ -1,0 +1,41 @@
+body
+{
+    text-align: center;
+}
+
+header
+{
+    font-size: large;
+}
+
+main
+{
+    font-size: medium;
+}
+
+footer
+{
+    font-size: small;
+
+}
+section
+{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+nav {
+  margin-top: 50px;
+  text-align: center; }
+
+nav a:hover {
+  text-decoration: none; }
+
+.btn {
+  margin: 10px; }
+
+.add-margin {
+  margin-top: 50px; }
+  img {
+    width: 80%;
+    display: block;
+    margin: auto; }
