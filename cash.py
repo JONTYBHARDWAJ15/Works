@@ -2,6 +2,7 @@ from cs50 import get_float
 
 from math import floor
 
+
 def main():
     while True:
         dollars_owed = get_float("Change owed: ")
