@@ -6,7 +6,6 @@ def main():
         n = height
         if n > 0 and n <= 8:
             break
-        return height
 
     for i in range(n):
         for j in range(n - i - 1):
