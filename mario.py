@@ -2,16 +2,16 @@ from cs50 import get_int
 
 def main():
     while True:
-        print("Height: ", end = "")
-        height = get_int()
-        if height >= 0 and height <= 8:
+        height = get_int("Height: ")
+        n = height
+        if n > 0 and n <= 8:
             break
         return height
 
-    for i in range(height):
-        for j in range(height - i - 1):
+    for i in range(n):
+        for j in range(n - i - 1):
             print(" ", end = "")
-        for k in range(i+2):
+        for k in range(i+1):
             print("#", end = "")
         print("")
 
