@@ -1,5 +1,6 @@
 from cs50 import get_int
 
+
 def main():
     while True:
         height = get_int("Height: ")
@@ -9,10 +10,11 @@ def main():
 
     for i in range(n):
         for j in range(n - i - 1):
-            print(" ", end = "")
+            print(" ", end="")
         for k in range(i+1):
-            print("#", end = "")
+            print("#", end="")
         print("")
+
 
 if __name__ == "__main__":
     main()
