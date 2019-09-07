@@ -30,6 +30,7 @@ def get_form():
 
 # My code:
 
+
 @app.route("/form", methods=["POST"])
 def post_form():
     if not request.form.get("name") or not request.form.get("society") or not request.form.get("House. No"):
@@ -39,6 +40,7 @@ def post_form():
         writer.writerow({"name": request.form.get("name"), "society": request.form.get("society")})
         file.close()
     return redirect("/sheet")
+
 
 @app.route("/sheet")
 def get_sheet():
