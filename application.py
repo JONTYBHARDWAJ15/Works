@@ -32,11 +32,12 @@ def get_form():
 
 @app.route("/form", methods=["POST"])
 def post_form():
-    if not request.form.get("name") or not request.form.get("school"):
-        return render_template("error.html", message="Error! Please include yo'r information, or Buck- I mean Witherwings 'll attack ya!")
+    if not request.form.get("name") or not request.form.get("society"):
+        return render_template("error.html", message="Error! Please fill all details!")
     with open("survey.csv", "a") as file:
-        writer = csv.DictWriter(file, fieldnames=["name", "school"])
-        writer.writerow({"name": request.form.get("name"), "school": request.form.get("school")})
+        writer = csv.DictWriter(file, fieldnames=["name", "society"])
+        writer.writerow({"name": request.form.get("name"), "society": request.form.get("society")})
+        file.close()
     return redirect("/sheet")
 
 @app.route("/sheet")
