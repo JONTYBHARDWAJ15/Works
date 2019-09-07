@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Society</th>
+                <th>House. No</th>
+            </tr>
+        </thead>
+    <!-- name & society are the assigned names to the input tag and the select tag. -->
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student["name"] }}</td>
+                <td>{{ student["society"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
