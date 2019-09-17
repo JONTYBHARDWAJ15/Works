@@ -15,9 +15,6 @@ from helpers import apology, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
-app.jinja_env.add_extension('jinja2.ext.do')
-app.jinja_env.filters['somefilter'] = lambda s: s
-
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
